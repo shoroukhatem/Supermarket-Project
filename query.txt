@@ -1,0 +1,20 @@
+1. CREARE DATABASE thecamp_market;
+2.  CREATE TABLE thecamp_market(
+    Id int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    product_name varchar(20) NOT NULL,
+    product_value float(10,2) NOT NULL,
+    product_quantity int(10) NOT NULL,
+    recored_date TIMESTAMP NOT NULL
+);
+3. CREATE TABLE thecamp_market_sells(
+ Id int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    product_id int(10) unsigned NOT NULL,
+   	CONSTRAINT proId FOREIGN KEY (product_id) REFERENCES thecamp_market(Id),
+    sells_quantity int(10) NOT NULL,
+    recored_date TIMESTAMP NOT NULL
+);
+
+4. INSERT INTO thecamp_market (product_name, product_value, product_quantity) VALUES ("Pepsi", 5, 20),("glaxy", 10, 26) ,("apple", 15, 50);
+5. INSERT INTO thecamp_market_sells (product_id, sells_quantity) VALUES (1,3),(2,2) ,(3,5);
+6. SELECT * FROM thecamp_market;
+7. SELECT * FROM thecamp_market_sells;
